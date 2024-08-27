@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
     menuImg: {
       width: 40,
       height: 40,
-      marginTop: 28,
-      left: 90,
+      marginTop: 29,
+      left: 92,
     },
 
     category: {
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     },
 
     categoryText: {
-      fontSize: 18,
+      fontSize: 15,
       color: "#333",
       maxWidth:"70%",
       textAlign: "center",
@@ -159,15 +159,15 @@ const styles = StyleSheet.create({
     },
 
     menuTitle: {
-      fontSize: 18,
+      fontSize: 17,
       fontWeight: "bold",
       color: "#666",
-      marginTop: 24,
+      marginTop: 25,
       marginLeft: 8,
     },
 
     menuDescription: {
-      fontSize: 16,
+      fontSize: 15,
       color: "#666",
       marginTop: 14,
     },
