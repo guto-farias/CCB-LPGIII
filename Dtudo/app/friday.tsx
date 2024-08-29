@@ -5,35 +5,34 @@ import { useRouter } from 'expo-router';
 
 
 export default function Index() {
-  const router = useRouter();
+    const router = useRouter();
 
-  const handleCalendarPress = () => {
-    const dayOfWeek = new Date().getDay();
-    let route = "/";
-
-    switch(dayOfWeek) {
-      case 1:
-        route = "/monday";
-        break;
-      case 2:
-        route = "/tuesday";
-        break;
-      case 3:
-        route = "/";
-        break;
-      case 4:
-        route = "/thursday";
-        break;
-      case 5:
-        route = "/friday";
-        break;
-      default:
-        route = "/";
-    }
-
-    router.push(route);
-  };
-
+    const handleCalendarPress = () => {
+      const dayOfWeek = new Date().getDay();
+      let route = "/";
+  
+      switch(dayOfWeek) {
+        case 1:
+          route = "/monday";
+          break;
+        case 2:
+          route = "/tuesday";
+          break;
+        case 3:
+          route = "/";
+          break;
+        case 4:
+          route = "/thursday";
+          break;
+        case 5:
+          route = "/friday";
+          break;
+        default:
+          route = "/";
+      }
+  
+      router.push(route);
+    };
   return (
     <View style={styles.conteiner}>
       <View style={styles.header}>
@@ -45,9 +44,9 @@ export default function Index() {
       <View style={styles.category}>
           <TouchableOpacity><Text style={styles.categoryText}><Link href="/monday">Segunda Feira</Link></Text></TouchableOpacity>
           <TouchableOpacity><Text style={styles.categoryText}><Link href="/tuesday">Terça Feira</Link></Text></TouchableOpacity>
-          <TouchableOpacity><Text style={[styles.categoryText, { fontWeight: "700" }]}><Link href="/">Quarta Feira</Link></Text></TouchableOpacity>
+          <TouchableOpacity><Text style={styles.categoryText}><Link href="/">Quarta Feira</Link></Text></TouchableOpacity>
           <TouchableOpacity><Text style={styles.categoryText}><Link href="/thursday">Quinta Feira</Link></Text></TouchableOpacity>
-          <TouchableOpacity><Text style={styles.categoryText}><Link href="/friday">Sexta Feira</Link></Text></TouchableOpacity>
+          <TouchableOpacity><Text style={[styles.categoryText, { fontWeight: "700" }]}><Link href="/friday">Sexta Feira</Link></Text></TouchableOpacity>
       </View>
 
       <ScrollView style={styles.menuContent} showsVerticalScrollIndicator={false}>
@@ -59,12 +58,12 @@ export default function Index() {
 
           <View style={styles.groupDescription}>
               <Image style={styles.triangleImg} source={require("../assets/images/triangle.png")}></Image>
-              <Text style={styles.menuDescription}>Mix de folhas com tomate</Text>
+              <Text style={styles.menuDescription}>Alface com cenoura</Text>
           </View>
 
           <View style={styles.groupDescription}>
               <Image style={styles.triangleImg} source={require("../assets/images/triangle.png")}></Image>
-              <Text style={styles.menuDescription}>Repolho cozido</Text>
+              <Text style={styles.menuDescription}>Abobrinha colorida</Text>
           </View>
         </View>
 
@@ -93,7 +92,7 @@ export default function Index() {
 
           <View style={styles.groupDescription}>
               <Image style={styles.triangleImg} source={require("../assets/images/triangle.png")}></Image>
-              <Text style={styles.menuDescription}>Legumes à dorê</Text>
+              <Text style={styles.menuDescription}>Aipim à tomatelli</Text>
           </View>
         </View>
 
@@ -105,7 +104,7 @@ export default function Index() {
 
           <View style={styles.groupDescription}>
               <Image style={styles.triangleImg} source={require("../assets/images/triangle.png")}></Image>
-              <Text style={styles.menuDescription}>Torta salgada com legumes</Text>
+              <Text style={styles.menuDescription}>Omelete de forno</Text>
           </View>
         </View>
 
@@ -117,7 +116,7 @@ export default function Index() {
 
           <View style={styles.groupDescription}>
               <Image style={styles.triangleImg} source={require("../assets/images/triangle.png")}></Image>
-              <Text style={styles.menuDescription}>Bife ao molho tricolor</Text>
+              <Text style={styles.menuDescription}>Bisteca acebolada</Text>
           </View>
         </View>
       </ScrollView>
