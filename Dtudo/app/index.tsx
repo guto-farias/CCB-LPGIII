@@ -3,6 +3,12 @@ import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from "rea
 import { Link } from 'expo-router';
 import { useRouter } from 'expo-router';
 
+import { useState, useEffect } from 'react'
+import { supabase } from '../lib/supabase'
+import Auth from '../components/Auth'
+import Account from '../components/Account'
+import { Session } from '@supabase/supabase-js'
+
 
 export default function Index() {
   const router = useRouter();
@@ -33,6 +39,19 @@ export default function Index() {
 
     router.push(route);
   };
+///////////////////////////////////////////////////////////////
+  const [session, setSession] = useState<Session | null>(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+  }, [])
+
 
   return (
     <View style={styles.conteiner}>
@@ -51,6 +70,9 @@ export default function Index() {
       </View>
 
       <ScrollView style={styles.menuContent} showsVerticalScrollIndicator={false}>
+      <View>
+          {session && session.user ? <Account key={session.user.id} session={session} /> : <Auth />}
+      </View>
         <View style={styles.menuItem}>
           <View style={styles.groupTitle}>
               <Image style={styles.arrowImg} source={require("../assets/images/arrow.png")}></Image>
